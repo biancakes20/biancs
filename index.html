@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Input Button Calculator</title>
+</head>
+
+<body>
+    <div class="page-layout">
+        <div class="nav-container">
+            <ul>
+                <li class="N1">Juvilyn R. Dejido</li>
+                <li class="N1">Bianca V. Lagunero</li>
+                <li class="N1">Jera Sigasig</li>
+                <li class="N1">Chuck Brian T. Cadalso</li>
+                <li class="N1">James Sialana</li>
+            </ul>
+        </div>
+        <div id="calculator" class="bg">
+            <input type="text" id="viewValue" value="" readonly>
+            <div class="buttons">
+                <input type="button" value="AC" class="btn-clear" onclick="clearView()">
+                <input type="button" value=">" class="btn-op" onclick="insert('>')">
+                <input type="button" value="<" class="btn-op" onclick="insert('<')">
+                <input type="button" value="/" class="btn-op" onclick="insert('/')">
+
+                <input type="button" value="7" class="btn-num" onclick="insert('7')">
+                <input type="button" value="8" class="btn-num" onclick="insert('8')">
+                <input type="button" value="9" class="btn-num" onclick="insert('9')">
+                <input type="button" value="*" class="btn-op" onclick="insert('*')">
+
+                <input type="button" value="4" class="btn-num" onclick="insert('4')">
+                <input type="button" value="5" class="btn-num" onclick="insert('5')">
+                <input type="button" value="6" class="btn-num" onclick="insert('6')">
+                <input type="button" value="-" class="btn-op" onclick="insert('-')">
+
+                <input type="button" value="1" class="btn-num" onclick="insert('1')">
+                <input type="button" value="2" class="btn-num" onclick="insert('2')">
+                <input type="button" value="3" class="btn-num" onclick="insert('3')">
+                <input type="button" value="+" class="btn-op row-span-1" onclick="insert('+')">
+
+                <input type="button" value="0" class="btn-num col-span-2" onclick="insert('0')">
+                <input type="button" value="." class="btn-num" onclick="insert('.')">
+
+                <input type="button" value="=" class="btn-equals" onclick="calculate()">
+            </div>
+        </div>
+    </div>
+    <script>
+        var view = document.getElementById('viewValue');
+
+        function insert(num){
+            view.value += num;
+        }
+        function clearView(){
+            view.value = '';
+        }
+        function calculate(){
+            try{
+                view.value = eval(view.value);
+            } catch {
+                view.value = "Error";
+            }
+        }
+    </script>
+
+</body>
+</html>
